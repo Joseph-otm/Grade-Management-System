@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard Professeur</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="dashboard">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="teacher-header-info">
+
+            <div class="class-logo">
+
+                <img
+                    src="images/class-logo.png"
+                    alt="Logo de notre classe"
+                >
+
+            </div>
+
+
+            <div>
+
+                <h1>
+                    Dashboard Professeur
+                </h1>
+
+                <p id="teacher-name">
+                    Chargement...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="logout-btn"
+            class="logout-button"
+            type="button"
+        >
+            Se déconnecter
+        </button>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =====================================================
+             MODULES
+        ====================================================== -->
+
+        <section
+            class="card"
+            id="modules-section"
+        >
+
+            <div class="section-title">
+
+                <div class="section-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <h2>
+                        Gestion des notes
+                    </h2>
+
+                    <p>
+                        Sélectionnez un module pour gérer les notes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modules-list">
+
+
+                <!-- LESEN -->
+
+                <div class="module-card">
+
+                    <div class="module-info">
+
+                        <div class="module-icon">
+                            📖
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Lesen
+                            </h3>
+
+                            <p>
+                                Compréhension écrite
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="module-right">
+
+                        <span class="module-score">
+                            /25
+                        </span>
+
+                        <button
+                            type="button"
+                            class="primary-button manage-module-btn"
+                            data-module="lesen"
+                        >
+                            Gérer les notes
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SCHREIBEN -->
+
+                <div class="module-card">
+
+                    <div class="module-info">
+
+                        <div class="module-icon">
+                            ✍️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Schreiben
+                            </h3>
+
+                            <p>
+                                Expression écrite
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="module-right">
+
+                        <span class="module-score">
+                            /25
+                        </span>
+
+                        <button
+                            type="button"
+                            class="primary-button manage-module-btn"
+                            data-module="schreiben"
+                        >
+                            Gérer les notes
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HÖREN -->
+
+                <div class="module-card">
+
+                    <div class="module-info">
+
+                        <div class="module-icon">
+                            🎧
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Hören
+                            </h3>
+
+                            <p>
+                                Compréhension orale
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="module-right">
+
+                        <span class="module-score">
+                            /25
+                        </span>
+
+                        <button
+                            type="button"
+                            class="primary-button manage-module-btn"
+                            data-module="hoeren"
+                        >
+                            Gérer les notes
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SPRECHEN -->
+
+                <div class="module-card">
+
+                    <div class="module-info">
+
+                        <div class="module-icon">
+                            🗣️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Sprechen
+                            </h3>
+
+                            <p>
+                                Expression orale
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="module-right">
+
+                        <span class="module-score">
+                            /25
+                        </span>
+
+                        <button
+                            type="button"
+                            class="primary-button manage-module-btn"
+                            data-module="sprechen"
+                        >
+                            Gérer les notes
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LISTE DES ÉTUDIANTS
+        ====================================================== -->
+
+        <section
+            class="card"
+            id="students-section"
+            style="display: none;"
+        >
+
+            <div class="students-header">
+
+                <div class="section-title">
+
+                    <div class="section-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <h2 id="selected-module-title">
+                            Étudiants
+                        </h2>
+
+                        <p>
+                            Sélectionnez un étudiant pour gérer sa note.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="back-to-modules-btn"
+                    class="secondary-button"
+                    type="button"
+                >
+                    ← Modules
+                </button>
+
+            </div>
+
+
+            <div
+                id="students-list"
+                class="students-grid"
+            >
+
+                <p>
+                    Chargement...
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DÉTAILS DE L'ÉTUDIANT
+        ====================================================== -->
+
+        <section
+            class="card"
+            id="student-details-section"
+            style="display: none;"
+        >
+
+
+            <!-- Retour -->
+
+            <button
+                id="back-to-students-btn"
+                class="back-button"
+                type="button"
+            >
+                ← Retour aux étudiants
+            </button>
+
+
+
+            <!-- =================================================
+                 INFORMATIONS ÉTUDIANT
+            ================================================== -->
+
+            <div class="student-details-header">
+
+                <div class="student-profile">
+
+                    <div class="student-avatar">
+                        👨‍🎓
+                    </div>
+
+
+                    <div>
+
+                        <h2 id="selected-student-name">
+                            Étudiant
+                        </h2>
+
+                        <p id="selected-module-name">
+                            Module
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="publication-status"
+                    class="publication-status"
+                >
+                    ⚪ Non publié
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NOTE DU MODULE
+            ================================================== -->
+
+            <div class="single-grade-box">
+
+                <div class="single-grade-icon">
+                    📝
+                </div>
+
+
+                <div class="single-grade-content">
+
+                    <h3>
+                        Note
+                    </h3>
+
+                    <p id="grade-module-description">
+                        Module
+                    </p>
+
+
+                    <div class="single-grade-input">
+
+                        <input
+                            type="number"
+                            id="module-grade-input"
+                            min="0"
+                            max="25"
+                            step="0.01"
+                            placeholder="0"
+                        >
+
+                        <span>
+                            / 25
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NOTE DU PROFESSEUR
+            ================================================== -->
+
+            <section class="teacher-note-box">
+
+                <div class="teacher-note-title">
+
+                    <div class="teacher-note-icon">
+                        📝
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Note du professeur
+                        </h3>
+
+                        <p>
+                            Cette remarque sera visible par l'étudiant.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <textarea
+                    id="teacher-note-input"
+                    rows="5"
+                    maxlength="1000"
+                    placeholder="Exemple : Youssef, tu es bien mais tu dois travailler davantage ta prononciation..."
+                ></textarea>
+
+
+                <div class="teacher-note-actions">
+
+                    <button
+                        id="save-note-btn"
+                        class="save-button"
+                        type="button"
+                    >
+                        💾 Enregistrer la note
+                    </button>
+
+                </div>
+
+
+                <p
+                    id="note-message"
+                    class="result-message"
+                ></p>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACTIONS DE LA NOTE
+            ================================================== -->
+
+            <div class="student-actions">
+
+                <button
+                    id="save-grade-btn"
+                    class="save-button"
+                    type="button"
+                >
+                    💾 Enregistrer
+                </button>
+
+
+                <button
+                    id="publish-grade-btn"
+                    class="publish-button"
+                    type="button"
+                >
+                    📢 Publier
+                </button>
+
+
+                <button
+                    id="edit-grade-btn"
+                    class="edit-button"
+                    type="button"
+                    style="display: none;"
+                >
+                    ✏️ Modifier la note
+                </button>
+
+            </div>
+
+
+            <p
+                id="grade-message"
+                class="result-message"
+            ></p>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     SUPABASE
+========================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/config.js"></script>
+
+<script src="js/teacher.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mes résultats</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard student-dashboard">
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="dashboard-header">
+
+        <div class="teacher-header-info">
+
+        <div class="class-logo">
+            <img
+                src="images/class-logo.png"
+                alt="Logo de notre classe"
+            >
+        </div>
+
+            <div>
+
+                <h1>
+                    Mes résultats
+                </h1>
+
+                <p id="student-name">
+                    Chargement...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="logout-btn"
+            class="logout-button"
+        >
+            Se déconnecter
+        </button>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             RÉSULTATS
+        ========================== -->
+
+        <section class="card">
+
+
+            <div class="section-title">
+
+                <div class="section-icon">
+                    🏆
+                </div>
+
+                <div>
+
+                    <h2>
+                        Mes résultats
+                    </h2>
+
+                    <p>
+                        Consultez vos notes publiées.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 MODULES
+            ========================== -->
+
+            <div
+                id="student-grades"
+                class="student-grades"
+            >
+
+                <p>
+                    Chargement des résultats...
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 TOTAL
+            ========================== -->
+
+<div class="student-total">
+
+    <div class="total-info">
+
+        <span class="total-title">
+            Note générale
+        </span>
+
+        <small>
+            Total des 4 modules
+        </small>
+
+    </div>
+
+
+    <div class="total-result">
+
+        <strong id="student-total-score">
+            -- / 100
+        </strong>
+
+        <div
+            id="student-result"
+            class="student-result"
+        >
+            --
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     NOTE DU PROFESSEUR
+========================== -->
+
+<!-- =========================================================
+     NOTE DU PROFESSEUR
+========================================================== -->
+
+<section
+    id="teacher-note-section"
+    class="teacher-note-section"
+    style="display: none;"
+>
+
+    <div class="teacher-note-header">
+
+        <div class="teacher-note-icon">
+            📝
+        </div>
+
+        <div>
+            <h2>Note du professeur</h2>
+
+            <p>
+                Un message de votre professeur
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="teacher-note-content">
+
+        <div class="teacher-note-quote">
+            “
+        </div>
+
+        <p id="teacher-note-text"></p>
+
+    </div>
+
+</section>
+        </section>
+
+
+
+        <!-- =========================
+             INFORMATION
+        ========================== -->
+
+        <section class="card student-info-card">
+
+            <div class="info-icon">
+                ℹ️
+            </div>
+
+            <div>
+
+                <h3>
+                    Information
+                </h3>
+
+                <p>
+                    Les notes sont affichées uniquement
+                    lorsqu'elles sont publiées par votre professeur.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =========================
+     SUPABASE
+========================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/config.js"></script>
+
+<script src="js/student.js"></script>
+
+
+</body>
+
+</html>
