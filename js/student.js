@@ -683,7 +683,7 @@ async function loadGrades() {
     else if (total >= 60) {
 
         resultText =
-            "Ausreichend → ناجح ✅";
+            "Ausreichend ✅";
 
     }
 
